@@ -6,6 +6,8 @@ namespace SeleniumTests
 {
     public class AppManager
     {
+        private static ThreadLocal<AppManager> app = new ThreadLocal<AppManager>();
+
         private IWebDriver driver;
         private StringBuilder verificationErrors;
         private string baseURL;
@@ -13,15 +15,37 @@ namespace SeleniumTests
         private NavigationHelper navigation;
         private LoginHelper auth;
         private ReviewHelper review;
-        public AppManager()
+        private AppManager()
         {
             driver = new ChromeDriver(@"C:\Users\Valeria\Downloads\chromedriver_win32");
-            baseURL = "https://www.google.com/";
+            baseURL = "https://forum.otzyv.ru";
             verificationErrors = new StringBuilder();
             driver.Manage().Window.Maximize();
             review = new ReviewHelper(this);
             auth = new LoginHelper(this);
             navigation = new NavigationHelper(this, baseURL);
+        }
+
+        public static AppManager GetInstance()
+        {
+            if (!app.IsValueCreated)
+            {
+                AppManager newInstance = new AppManager();
+                newInstance.Navigation.OpenHomePage();
+                app.Value = newInstance;
+            }
+            return app.Value;
+        }
+        ~AppManager()
+        {
+            try
+            {
+                driver.Quit();
+            }
+            catch (Exception)
+            {
+                //ignore
+            }
         }
 
         public IWebDriver Driver
@@ -54,9 +78,11 @@ namespace SeleniumTests
                 return review;
             }
         }
+
         public void Stop()
         {
             driver.Quit();
         }
+        
     }
 }

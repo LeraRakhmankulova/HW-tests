@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/ZgNaEHvPYZcvrJIIHNCmVcWE2YKvh0jsysUMelHeMkPRutN+tOu2VFBHFirTbPyQpzHOSTDCFzYAotxRDq0iQ==",
+  "dgSpecHash": "n4AAivuma2bfmmnGxJSCwqrSW5p/geLkmRwNLicns/pk9bcFchDYbRFc64AdKas7KP0TvzLY3DdnBwpxF72oCg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Valeria\\source\\repos\\TestProject1\\TestProject1\\TestProject1.csproj",
+  "projectFilePath": "C:\\Users\\Valeria\\Desktop\\HW-tests\\TestProject1\\TestProject1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Valeria\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\Valeria\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",
