@@ -18,7 +18,8 @@ namespace SeleniumTests
         private AppManager()
         {
             driver = new ChromeDriver(@"C:\Users\Valeria\Downloads\chromedriver_win32");
-            baseURL = "https://forum.otzyv.ru";
+            baseURL = "https://todoist.com";
+        https://todoist.com/app/today
             verificationErrors = new StringBuilder();
             driver.Manage().Window.Maximize();
             review = new ReviewHelper(this);

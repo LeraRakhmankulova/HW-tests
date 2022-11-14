@@ -21,14 +21,12 @@ namespace SeleniumTests
 
         public void OpenHomePage()
         {
-            driver.Navigate().GoToUrl("https://otzyv.ru");
+            driver.Navigate().GoToUrl($"{baseURL}/ru");
         }
 
-        public void OpenReviewPage()
+        public void OpenMainPage()
         {
-            driver.Navigate().GoToUrl($"{baseURL}/razdel/8/");
-            driver.FindElement(By.LinkText("Какие у вас любимые сериалы?")).Click();
-            driver.Navigate().GoToUrl($"{baseURL}/tema/7722/?v=131122143451");
+            driver.Navigate().GoToUrl($"{baseURL}/app/today");
         }
 
         public void OpenLastReviewPages(int id)

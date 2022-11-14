@@ -10,10 +10,11 @@ namespace SeleniumTests
         [Test, Order(0)]
         public void LoginCaseTest()
         {
-            //app.Navigation.OpenHomePage();
-            //AccountData user = new AccountData("Lera26422002", "Le26ra1703.");
-            //app.Auth.Login(user);
-            app.Auth.TestLogin();
+
+            app.Navigation.OpenHomePage();
+            AccountData user = new AccountData("raxmankulova.v@mail.ru", "Le26ra1703.");
+            app.Auth.Login(user);
+            app.Navigation.OpenMainPage();
         }
     }
 }
