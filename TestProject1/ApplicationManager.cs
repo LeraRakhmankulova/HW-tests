@@ -14,15 +14,14 @@ namespace SeleniumTests
 
         private NavigationHelper navigation;
         private LoginHelper auth;
-        private ReviewHelper review;
+        private CommentHelper comment;
         private AppManager()
         {
             driver = new ChromeDriver(@"C:\Users\Valeria\Downloads\chromedriver_win32");
-            baseURL = "https://todoist.com";
-        https://todoist.com/app/today
+            baseURL = "https://grouple.co/";
             verificationErrors = new StringBuilder();
             driver.Manage().Window.Maximize();
-            review = new ReviewHelper(this);
+            comment = new CommentHelper(this);
             auth = new LoginHelper(this);
             navigation = new NavigationHelper(this, baseURL);
         }
@@ -72,11 +71,11 @@ namespace SeleniumTests
             }
         }
 
-        public ReviewHelper Review
+        public CommentHelper Comment
         {
             get
             {
-                return review;
+                return comment;
             }
         }
 

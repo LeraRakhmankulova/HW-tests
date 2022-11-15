@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SeleniumTests
 {
-    public class ReviewData
+    public class CommentData
     {
-        public ReviewData(string description)
+        public CommentData(string description)
         {
             Description = description;
         }

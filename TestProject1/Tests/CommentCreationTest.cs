@@ -14,12 +14,12 @@
 //            app.Navigation.OpenHomePage();
 //            AccountData user = new AccountData("raxmankulova.v@mail.ru", "Le26ra1703.");
 //            app.Auth.Login(user);
-//            app.Navigation.OpenReviewPage();
-//            ReviewData reviewData = new ReviewData("5:32 - хороший сериал");
-//            app.Review.CreateNewReview(reviewData);
+//            app.Navigation.OpenForumnPage();
+//            CommentData comment = new CommentData("Очень красивые рисуки!");
+//            app.Comment.CreateNewComment(comment);
 
-//            ReviewData newReview = app.Review.GetCreatedReviewDataById(468923);
-//            Assert.That(newReview.Description, Is.EqualTo(reviewData.Description));
+//            CommentData newComment = app.Comment.GetCreatedComment();
+//            Assert.That(newComment.Description, Is.EqualTo(comment.Description));
 //        }
 //    }
 //}

@@ -19,37 +19,20 @@ namespace SeleniumTests
 
         public void Login(AccountData user)
         {
-            driver.FindElement(By.XPath("//div[@id='__next']/div/div/header/nav[2]/div/ul[2]/li/a")).Click();
-            driver.Navigate().GoToUrl("https://todoist.com/auth/login");
-            driver.FindElement(By.Id("element-0")).Click();
-            driver.FindElement(By.Id("element-0")).Clear();
-            driver.FindElement(By.Id("element-0")).SendKeys(user.Username.ToString());
-            driver.FindElement(By.Id("element-3")).Click();
-            driver.FindElement(By.Id("element-3")).Clear();
-            driver.FindElement(By.Id("element-3")).SendKeys(user.Password.ToString());
-            driver.FindElement(By.XPath("//button[@type='submit']")).Click();
+            driver.FindElement(By.XPath("//div[@id='wrap']/header/div/div/div[2]/div/div/div[3]/a")).Click();
+            driver.FindElement(By.Id("username")).Click();
+            driver.FindElement(By.Id("username")).Clear();
+            driver.FindElement(By.Id("username")).SendKeys(user.Username.ToString());
+            driver.FindElement(By.Id("password")).Click();
+            driver.FindElement(By.Id("password")).Clear();
+            driver.FindElement(By.Id("password")).SendKeys(user.Password.ToString());
+            driver.FindElement(By.XPath("//input[@value='Вход']")).Click();
         }
 
         public void Logout()
         {
-            driver.FindElement(By.Id("call_user")).Click();
-            driver.FindElement(By.LinkText("Выйти")).Click();
-            driver.FindElement(By.Name("exit")).Click();
-            driver.FindElement(By.XPath("//input[@value='Выйти']")).Click();
+            driver.FindElement(By.XPath("//div[@id='wrap']/header/div/div/div[2]/div/div/div[6]/a/span")).Click();
+            driver.FindElement(By.XPath("//div[@id='accountMenu']/div/a[6]/div")).Click();
         }
-
-        //public void TestLogin()
-        //{
-        //    driver.FindElement(By.XPath("//div[@id='__next']/div/div/header/nav[2]/div/ul[2]/li/a")).Click();
-        //    driver.Navigate().GoToUrl("https://todoist.com/auth/login");
-        //    driver.FindElement(By.Id("element-0")).Click();
-        //    driver.FindElement(By.Id("element-0")).Clear();
-        //    driver.FindElement(By.Id("element-0")).SendKeys("raxmankulova.v@mail.ru");
-        //    driver.FindElement(By.Id("element-3")).Click();
-        //    driver.FindElement(By.Id("element-3")).Clear();
-        //    driver.FindElement(By.Id("element-3")).SendKeys("Le26ra1703.");
-        //    driver.FindElement(By.XPath("//button[@type='submit']")).Click();
-        //    driver.Navigate().GoToUrl("https://todoist.com/app/");
-        //}
     }
 }

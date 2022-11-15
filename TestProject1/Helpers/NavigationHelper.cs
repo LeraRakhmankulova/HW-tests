@@ -21,12 +21,12 @@ namespace SeleniumTests
 
         public void OpenHomePage()
         {
-            driver.Navigate().GoToUrl($"{baseURL}/ru");
+            driver.Navigate().GoToUrl($"{baseURL}/");
         }
 
-        public void OpenMainPage()
+        public void OpenForumnPage()
         {
-            driver.Navigate().GoToUrl($"{baseURL}/app/today");
+            driver.Navigate().GoToUrl($"{baseURL}/?targetUri=https://grouple.co/");
         }
 
         public void OpenLastReviewPages(int id)
