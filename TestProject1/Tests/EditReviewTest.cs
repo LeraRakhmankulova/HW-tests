@@ -1,30 +1,25 @@
-﻿//using SeleniumTests;
+﻿using SeleniumTests;
 
-//namespace SeleniumTests
+namespace SeleniumTests
 
-//{
-//    [TestFixture]
-//    public class EditReviewTest : TestBase
-//    {
+{
+    [TestFixture]
+    public class EditReviewTest : TestBase
+    {
 
-//        [Test, Order(3)]
-//        public void EditReviewhCaseTest()
-//        {
-//            app.Navigation.OpenHomePage();
-//            AccountData user = new AccountData("Lera26422002", "Le26ra1703.");
-//            app.Auth.Login(user);
-//            app.Navigation.OpenReviewPage();
-//            ReviewData reviewData = new ReviewData("старый отзыв");
-//            app.Review.CreateNewReview(reviewData);
+        [Test, Order(0)]
+        public void EditReviewhCaseTest()
+        {
+            app.Navigation.OpenHomePage();
+            AccountData user = new AccountData("raxmankulova.v@mail.ru", "Le26ra1703.");
+            app.Auth.Login(user);
+            app.Navigation.OpenForumnPage();
+            CommentData comment = new CommentData("Очень красивые рисуки!");
+            app.Comment.CreateNewComment(comment);
 
-//            app.Navigation.OpenEditReviewPage();
-//            ReviewData newReviewData = new ReviewData("новый тозыв");
-//            app.Review.EditReviewData(newReviewData);
-
-//            app.Navigation.OpenReviewPage();
-//            ReviewData newReview = app.Review.GetCreatedReviewDataById(468923);
-//            Assert.That(newReview.Description, Is.EqualTo(newReviewData.Description));
-//        }
-//    }
-//}
+            CommentData editedComment = new CommentData("Круто!");
+            app.Comment.EditComment(editedComment);
+        }
+    }
+}
 

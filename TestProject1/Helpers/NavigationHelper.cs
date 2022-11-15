@@ -28,16 +28,5 @@ namespace SeleniumTests
         {
             driver.Navigate().GoToUrl($"{baseURL}/?targetUri=https://grouple.co/");
         }
-
-        public void OpenLastReviewPages(int id)
-        {
-            driver.Navigate().GoToUrl($"{baseURL}/tema/8062/1980/#{id}");
-        }
-
-        public void OpenEditReviewPage()
-        {
-            driver.FindElement(By.XPath("//div[@id='main']/section[3]/div/div/div[3]/a")).Click();
-            driver.Navigate().GoToUrl($"{baseURL}/tema/8062/1980/");
-        }
     }
 }
