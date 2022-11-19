@@ -21,12 +21,13 @@ namespace SeleniumTests
 
         public void OpenHomePage()
         {
-            driver.Navigate().GoToUrl($"{baseURL}/");
+            driver.Navigate().GoToUrl(baseURL);
         }
 
         public void OpenForumnPage()
         {
-            driver.Navigate().GoToUrl($"{baseURL}/?targetUri=https://grouple.co/");
+            driver.Navigate().GoToUrl($"{baseURL}community/sort/hot");
+            driver.FindElement(By.LinkText("Для тех кому нечем заняться или просто скучно.")).Click();
         }
     }
 }
