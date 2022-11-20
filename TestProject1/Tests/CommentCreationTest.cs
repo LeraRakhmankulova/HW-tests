@@ -1,11 +1,13 @@
 ﻿using SeleniumTests;
 using OpenQA.Selenium;
+using System.Xml.Serialization;
+using System.Xml.Linq;
 
 namespace SeleniumTests
 
 {
     [TestFixture]
-    public class ReviewCreationTest : TestBase
+    public class CommentCreationTest : TestBase
     {
 
         [Test, Order(1)]

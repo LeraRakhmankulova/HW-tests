@@ -8,6 +8,9 @@ namespace SeleniumTests
 {
     public class CommentData
     {
+        public CommentData() { 
+        }
+
         public CommentData(string description)
         {
             Description = description;

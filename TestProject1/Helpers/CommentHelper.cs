@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using System.Text.RegularExpressions;
+using System.Xml.Serialization;
 
 namespace SeleniumTests
 {
@@ -17,6 +18,7 @@ namespace SeleniumTests
             driver.FindElement(By.Id("text")).Click();
             driver.FindElement(By.Id("text")).Clear();
             driver.FindElement(By.Id("text")).SendKeys(comment.Description.ToString());
+            driver.FindElement(By.Name(" ")).Click();
         }
 
         public CommentData GetCreatedComment()
