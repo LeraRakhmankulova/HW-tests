@@ -13,7 +13,7 @@ namespace XmlGenerator
     {
         private static string pathData = @"C:\Users\Valeria\Desktop\HW-tests\TestProject1\Data\";
 
-        //2 comment.xml xml
+        //2 comments.xml xml
         static void Main(string[] args)
         {
             var data = Console.ReadLine()?.Split();
@@ -46,7 +46,7 @@ namespace XmlGenerator
             int rndValue = Convert.ToInt32(rnd.NextDouble() * max);
             StringBuilder builder = new StringBuilder();
 
-            for (int i = 0; i < rndValue; i++)
+            for (int i = 0; i <= rndValue; i++)
             {
                 builder.Append(Convert.ToChar(32 + Convert.ToInt32(rnd.NextDouble() * 65)));
 

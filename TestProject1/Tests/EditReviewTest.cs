@@ -1,28 +1,23 @@
-﻿//using SeleniumTests;
+﻿using SeleniumTests;
 
-//namespace SeleniumTests
+namespace SeleniumTests
 
-//{
-//    [TestFixture]
-//    public class EditReviewTest : TestBase
-//    {
+{
+    [TestFixture]
+    public class EditReviewTest : TestBase
+    {
 
-//        [Test, Order(2)]
-//        public void EditReviewhCaseTest()
-//        {
-//            app.Navigation.OpenHomePage();
-//            AccountData user = new AccountData("raxmankulova.v@mail.ru", "Le26ra1703.");
-//            app.Auth.Login(user);
-//            app.Navigation.OpenForumnPage();
-//            CommentData comment = new CommentData("наверное нет...");
-//            app.Comment.CreateNewComment(comment);
+        [Test, Order(4)]
+        public void EditReviewhCaseTest()
+        {
+            app.Navigation.OpenForumnPage();
 
-//            CommentData editedComment = new CommentData("наверное нет... жаль");
-//            app.Comment.EditComment(editedComment);
+            CommentData comment = new CommentData("как дела?");
+            app.Comment.CreateNewComment(comment);
 
-//            CommentData newComment = app.Comment.GetCreatedComment();
-//            Assert.That(newComment.Description, Is.EqualTo(comment.Description));
-//        }
-//    }
-//}
+            CommentData editedComment = new CommentData("привет!");
+            app.Comment.EditComment(editedComment);
+        }
+    }
+}
 

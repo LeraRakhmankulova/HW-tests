@@ -27,7 +27,7 @@ namespace SeleniumTests
         public void OpenForumnPage()
         {
             driver.Navigate().GoToUrl($"{baseURL}community/sort/hot");
-            driver.FindElement(By.LinkText("Для тех кому нечем заняться или просто скучно.")).Click();
+            driver.FindElement(By.LinkText("книжный шкаф")).Click();
         }
     }
 }
