@@ -16,29 +16,19 @@ namespace SeleniumTests
             AccountData user = new AccountData("test1000lera@mail.ru", "Le26ra1703.");
             app.Auth.Login(user);
             app.Navigation.OpenHomePage();
+            app.Auth.Logout();
         }
 
         [Test, Order(2)]
         public void CreateNewReviewCaseTest()
         {
-            app.Navigation.OpenForumnPage();
+            app.Navigation.OpenHomePage();
+            AccountData user = new AccountData("test1000lera@mail.ru", "Le26ra1703.");
+            app.Auth.Login(user);
+            app.Navigation.OpenHomePage();
             CommentData comment = new CommentData("посоветуйте книгу)");
             app.Comment.CreateNewComment(comment);
             app.Navigation.OpenForumnPage();
-            CommentData newComment = app.Comment.GetCreatedComment();
-            Assert.That(newComment.Description, Is.EqualTo(comment.Description));
-        }
-        public static IEnumerable<CommentData> CommentDataFromXmlFile()
-        {
-            return (List<CommentData>)new XmlSerializer(typeof(List<CommentData>))
-                .Deserialize(new StreamReader(@"..\..\..\Data\comments.xml"));
-        }
-
-        [Test, Order(3), TestCaseSource(nameof(CommentDataFromXmlFile))]
-        public void CreateFromXml(CommentData commentData)
-        {
-            app.Navigation.OpenForumnPage();
-            app.Comment.CreateNewComment(commentData);
         }
     }
 }

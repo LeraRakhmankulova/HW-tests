@@ -23,19 +23,6 @@ namespace SeleniumTests
             driver.FindElement(By.Name(" ")).Click();
         }
 
-        public CommentData GetCreatedComment()
-
-        {
-            var result = driver.FindElement(By.XPath($"//*[@id=\"comment-3352546\"]/div")).Text;
-            return new CommentData(result);
-        }
-        public CommentData GetEditedComment()
-
-        {
-            var result = driver.FindElement(By.XPath($"//*[@id=\"comment-3352552\"]/div")).Text;
-            return new CommentData(result);
-        }
-
         public void EditComment(CommentData comment)
         {
             driver.FindElement(By.Id("3352552")).Click();

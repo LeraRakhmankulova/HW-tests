@@ -6,8 +6,6 @@ namespace SeleniumTests
 {
     public class AppManager
     {
-        private static ThreadLocal<AppManager> app = new ThreadLocal<AppManager>();
-
         private IWebDriver driver;
         private StringBuilder verificationErrors;
         private string baseURL;
@@ -15,7 +13,7 @@ namespace SeleniumTests
         private NavigationHelper navigation;
         private LoginHelper auth;
         private CommentHelper comment;
-        private AppManager()
+        public AppManager()
         {
             driver = new ChromeDriver(@"C:\Users\Valeria\Downloads\chromedriver_win32");
             baseURL = "https://grouple.co/";
@@ -24,28 +22,6 @@ namespace SeleniumTests
             comment = new CommentHelper(this);
             auth = new LoginHelper(this);
             navigation = new NavigationHelper(this, baseURL);
-        }
-
-        public static AppManager GetInstance()
-        {
-            if (!app.IsValueCreated)
-            {
-                AppManager newInstance = new AppManager();
-                newInstance.Navigation.OpenHomePage();
-                app.Value = newInstance;
-            }
-            return app.Value;
-        }
-        ~AppManager()
-        {
-            try
-            {
-                driver.Quit();
-            }
-            catch (Exception)
-            {
-                //ignore
-            }
         }
 
         public IWebDriver Driver

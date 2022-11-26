@@ -11,7 +11,12 @@ namespace SeleniumTests
         [SetUp]
         public void SetupTest()
         {
-            app = AppManager.GetInstance();
+            app = new AppManager();
+        }
+        [TearDown]
+        public void TeardownTest()
+        {
+            app.Stop();
         }
     }
 }
