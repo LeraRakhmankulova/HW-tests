@@ -7,24 +7,16 @@ namespace SeleniumTests
 
 {
     [TestFixture]
-    public class CommentCreationTest : TestBase
+    public class CommentCreationTest : AuthBase
     {
-        [Test, Order(1)]
-        public void LoginCaseTest()
-        {
-            app.Navigation.OpenHomePage();
-            AccountData user = new AccountData("test1000lera@mail.ru", "Le26ra1703.");
-            app.Auth.Login(user);
-            app.Navigation.OpenHomePage();
-        }
 
-        [Test, Order(2)]
+        [Test, Order(1)]
         public void CreateNewReviewCaseTest()
         {
             app.Navigation.OpenForumnPage();
-            CommentData comment = new CommentData("посоветуйте книгу)");
+            CommentData comment = new CommentData("всем привет! тут кто-то есть?");
             app.Comment.CreateNewComment(comment);
-            app.Navigation.OpenForumnPage();
+
             CommentData newComment = app.Comment.GetCreatedComment();
             Assert.That(newComment.Description, Is.EqualTo(comment.Description));
         }
@@ -34,7 +26,7 @@ namespace SeleniumTests
                 .Deserialize(new StreamReader(@"..\..\..\Data\comments.xml"));
         }
 
-        [Test, Order(3), TestCaseSource(nameof(CommentDataFromXmlFile))]
+        [Test, Order(2), TestCaseSource(nameof(CommentDataFromXmlFile))]
         public void CreateFromXml(CommentData commentData)
         {
             app.Navigation.OpenForumnPage();
@@ -42,4 +34,3 @@ namespace SeleniumTests
         }
     }
 }
-
